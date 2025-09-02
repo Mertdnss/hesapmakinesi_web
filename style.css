@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+body {
+    background-image: linear-gradient(to right top, #ca5698, #c163af, #b471c3, #a37ed4, #8e8be1, #7597eb, #58a3f1, #36adf2, #00b9ee, #00c3e5, #00ccd9, #45d3ca);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainArea {
+    height: 30vh;
+    max-width: 18rem;
+    width: 100% !important;
+}
+
+.mainArea .screen {
+    background: rgba(255, 255, 255, 0.545);
+    font-weight: bold;
+    text-align: right;
+    font-size: 60px;
+    margin-bottom: 0.4rem;
+    user-select: none;
+}
+
+.mainArea .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.4rem;
+}
+
+.mainArea .row button {
+    width: 4.125rem;
+    height: 4.125rem;
+    font-size: 1.5rem;
+    background-color: #1899D6;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+    color: white;
+}
+
+.mainArea .row button:hover{
+    border: 1px solid black;
+}
+
+.mainArea .row button.active{
+    background-color: #8e8be1;
+}
+
+.mainArea .row button.active2{
+    background-color: rgb(214, 15, 15);
+}
+
+.mainArea .row button.active2:hover{
+    background-color: rgb(182, 13, 13);
+}
+
+.mainArea .row button.active3{
+    background-color: rgb(244, 209, 163);
+    color: black;
+}
