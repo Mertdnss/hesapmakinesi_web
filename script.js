@@ -9,6 +9,17 @@ let num2 = 0;
 let processOperator = "";
 let clearScreen = false;
 
+let screenfontsize = parseInt(getComputedStyle(screen).fontSize);
+
+const setFont = () => {
+    screen.style.fontSize = 60 + "px"; // önce resetle
+    while ((screen.scrollWidth > screen.clientWidth || screen.scrollHeight > screen.clientHeight) && screenfontsize > 5) {
+        screenfontsize -= 1;
+        screen.style.fontSize = screenfontsize + "px";
+    }
+}
+
+
 const Calculate = (num1, num2, operator) => {
     let result = 0;
     switch (operator) {
@@ -34,10 +45,16 @@ const AddScreen = (num) => {
         clearScreen = false;
     }
     screen.textContent += parseFloat(num.textContent);
+    if (screen.textContent.length >= 9) {
+        setFont();
+    }
 }
 
 const ShowResult = (result) => {
     screen.textContent = result;
+    if (screen.textContent.length >= 9) {
+        setFont();
+    }
 }
 
 for (let i = 0; i < nums.length; i++) {
@@ -52,11 +69,12 @@ process.forEach(item => {
     })
 });
 
-calculate.onclick = function() {
+calculate.onclick = function () {
     num2 = parseFloat(screen.textContent);
-    Calculate(num1 , num2 , processOperator);
+    Calculate(num1, num2, processOperator);
 }
 
 clearScreenDiv.onclick = () => {
+    screen.style.fontSize = 60 + "px";
     screen.textContent = "0";
 }
